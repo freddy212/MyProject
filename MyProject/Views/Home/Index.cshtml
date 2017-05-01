@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model MyProject.Models.ProductViewModel
+
+  <form  method="post" asp-controller="Home" asp-action="RegisterOrder">
+    <div class="container" id="shopcontainer">
+        <div class="container-fluid col-md-3">
+            <img src="~/images/juice.jpg" width="50" height="80" />
+            <input type="number" min="0" class="numberInput" value="0" asp-for="AmountOfJuice" />
+            <span asp-validation-for="AmountOfJuice" class="text-danger"></span>
+        </div>
+        <div class="container-fluid col-md-3">
+            <img src="~/images/rundstykke.jpg" width="50" height="80" />
+            <br />
+            <input type="number" min="0" class="numberInput" value="0" asp-for="AmountOfBread" />
+            <span asp-validation-for="AmountOfBread" class="text-danger"></span>
+        </div>  
+    </div>
+        <div class="container-fluid">
+            <br />
+            <input type="submit" value="GoToCart" class="submitbutton btn-success" />
+        </div>
+</form>

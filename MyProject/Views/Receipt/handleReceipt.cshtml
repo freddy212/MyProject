@@ -1,0 +1,51 @@
+﻿@model MyProject.Models.ReceiptViewModel
+@{
+    ViewData["Title"] = "handleReceipt";
+}
+
+@foreach (var product in Model.products)
+{
+    <div class="container-fluid">
+
+        <h3> @product.productName() : You want to order @product.getAmount() with a cost of : @product.price()</h3>
+        <br /> 
+    </div>
+}
+
+<h2><b>Enter information below to get receipt : </b></h2>
+
+<div class="form-horizontal">
+
+    <form asp-controller="Receipt" asp-action="CreateReceipt" method="post">
+        <div class="form-group">
+            <label asp-for="name" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label asp-for="address" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="address" class="form-control" />
+                <span asp-validation-for="address" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="city" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="city" class="form-control" />
+                <span asp-validation-for="city" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn-success center-block">Order</button>
+            </div>
+        </div>
+
+
+    </form>
+
+</div>

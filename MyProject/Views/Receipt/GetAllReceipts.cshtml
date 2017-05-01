@@ -1,0 +1,21 @@
+﻿@model ICollection<MyProject.Models.Receipt>
+
+<h2> List of Receipts : </h2>
+
+@foreach (var product in Model)
+{
+    @Html.Raw(product.products)
+    <br />
+    <h3> Totalcost : @product.totalPrice</h3>
+    <br />
+    <label for="name" class="col-md-2 control-label"> <b>Name</b></label>
+    <h4 id="name">@product.name</h4>
+    <br />
+    <label for="address" class="col-md-2 control-label"> <b>Address</b></label>
+    <h4 id="address">@product.address</h4>
+    <br />
+    <label for="city" class="col-md-2 control-label"> <b>City</b></label>
+    <h4 id="city">@product.city</h4>
+    <br />
+
+}

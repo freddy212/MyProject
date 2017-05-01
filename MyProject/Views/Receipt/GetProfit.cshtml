@@ -1,0 +1,8 @@
+﻿
+<h2> enter the id of the order, you wish to know the profit on</h2>
+<form asp-action="ShowProfit" asp-controller="Receipt" method="get">
+   <label for="myid" class="col-md-2 control-label"> <b>Enter Id</b></label>
+    <input type="number" value="1" id="myid" name="id" class="numberInput" />
+    <br />
+    <input type="submit" class="submitbutton btn-success" value="GetProfit"/>
+</form>
